@@ -62,6 +62,13 @@ all:
 	make config;
 	make generate;
 
+.PHONY: addProto
+addProto:
+	@echo "please input proto file name:"
+	@read protoName; \
+	protoPath=./api/$$protoName; \
+	echo "syntax = \"proto3\";" | cat >> $$protoPath; \
+
 # show help
 help:
 	@echo ''

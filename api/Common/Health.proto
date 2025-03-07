@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+option go_package = "workflowDemo/api/helloworld/v1;v1";
+
+message emptyRequest{
+
+}
+message emptyReply{
+
+}
+
+service CommonService {
+  rpc GetHealth(emptyRequest) returns (emptyReply) {
+    option (google.api.http) = {
+      get: "/health"
+    };
+  }
+}
